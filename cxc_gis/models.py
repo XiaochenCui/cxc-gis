@@ -29,4 +29,4 @@ class Region():
         :param vertices: vertices of region
         :type vertices: list[Location]
         """
-        pass
+        self.vertices = vertices
