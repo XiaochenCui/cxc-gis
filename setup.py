@@ -29,4 +29,5 @@ setup(
     ],
     keywords='gis',
     packages=find_packages(),
+    install_requires=['utm'],
 )
