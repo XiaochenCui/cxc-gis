@@ -6,3 +6,5 @@ install:
   - pip install -r requirements.txt
 script:
   - pytest -v
+notifications:
+  slack: gimme-gimme-gimme:uY4HHVgymLh2iLILqZahaOPK
