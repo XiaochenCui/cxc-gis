@@ -1,0 +1,2 @@
+class LocationsTooLittle(ValueError):
+    pass

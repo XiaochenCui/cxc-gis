@@ -1,16 +1,9 @@
-from cxc_gis.models import Location, Region
+from cxc_gis.models import Point, Location, Region
+
+from test.test_base import BaseTestCase
 
 
-def init_locations():
-    pass
-
-
-class TestLocation():
-    pass
-
-
-class TestUtm():
-
+class TestLocation(BaseTestCase):
     def test_utm(self):
         location = Location(latitude=51.2, longitude=7.5)
         assert location.latitude == 51.2
