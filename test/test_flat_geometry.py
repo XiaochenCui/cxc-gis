@@ -51,3 +51,12 @@ class TestFlatGeometry(BaseTestCase):
         region_1 = Region([self.location_a, self.location_e, self.location_g,
                            self.location_b])
         assert self.location_c in region_1
+        assert self.location_f not in region_1
+        region_2 = Region([self.location_a, self.location_h, self.location_b,
+                           self.location_f, self.location_e])
+        assert self.location_c in region_2
+        assert self.location_d not in region_2
+        region_3 = Region([self.location_b, self.location_f, self.location_g])
+        assert self.location_d not in region_3
+        assert self.location_b in region_3
+        assert self.location_f not in region_3

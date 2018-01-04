@@ -1,4 +1,4 @@
-from cxc_gis.models import Point, location, Line
+from cxc_gis import models
 
 
 def on_segment(point_p, point_q, point_r):
@@ -7,11 +7,11 @@ def on_segment(point_p, point_q, point_r):
     lies on line segment "pr"
 
     :param point_p:
-    :type point_p: Point
+    :type point_p: models.Point
     :param point_q:
-    :type point_q: Point
+    :type point_q: models.Point
     :param point_r:
-    :type point_r: Point
+    :type point_r: models.Point
     :return: if point r on line segment "pr"
     :rtype: bool
     """
@@ -28,11 +28,11 @@ def orientation(point_p, point_q, point_r):
     To find orientation of ordered triplet (p, q, r).
 
     :param point_p:
-    :type point_p: Point
+    :type point_p: models.Point
     :param point_q:
-    :type point_q: Point
+    :type point_q: models.Point
     :param point_r:
-    :type point_r: Point
+    :type point_r: models.Point
     :return: 0: p, q and r are colinear
              1: clockwise
              2: counterclockwise
@@ -52,9 +52,9 @@ def is_intersect(line_a, line_b):
     Determine if lina_a intersect with line_b
 
     :param lina_a:
-    :type lina_a: Line
+    :type lina_a: models.Line
     :param lina_b:
-    :type line_b: Line
+    :type line_b: models.Line
     :return:
     :rtype: bool
     """
@@ -94,16 +94,17 @@ def is_inside(point, region):
     Detemine if point is in region
 
     :param point:
-    :type point: Point
+    :type point: models.Point
     :param region:
     :type region: Region
     """
     points = region.vertices
-    extrame = Point(x=1000000, y=point.y)
+    extrame = models.Point(x=1000000, y=point.y)
 
-    points = points.append(points[0])
+    points = points + [points[0]]
     intersect_count = 0
     for i in range(len(points) - 1):
-        if is_intersect(Line(point, extrame), Line(points[i], points[i+1])):
+        if is_intersect(models.Line(point, extrame),
+                        models.Line(points[i], points[i+1])):
             intersect_count += 1
     return intersect_count % 2 == 1

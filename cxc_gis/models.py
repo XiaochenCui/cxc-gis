@@ -3,7 +3,7 @@ import utm
 from collections import namedtuple
 
 from cxc_gis.exceptions import LocationsTooLittle
-from cxc_gis.flat_geometry import is_inside
+from cxc_gis import flat_geometry
 
 
 Point = namedtuple("Point", ["x", "y"])
@@ -88,7 +88,7 @@ class Region():
 
     def __contains__(self, location):
         assert isinstance(location, Location)
-        return is_inside(location, self)
+        return flat_geometry.is_inside(location, self)
 
     def __repr__(self):
         return "Region with vertices: {}".format(self.vertices)
