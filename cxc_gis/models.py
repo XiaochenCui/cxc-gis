@@ -71,6 +71,40 @@ class Line():
     __str__ = __repr__
 
 
+class Polyline():
+    """Polyline class"""
+    def __init__(self, locations):
+        """
+        Init a polyline with locations
+
+        :param locations: locations of ployline
+        :type locations: list[Location]
+        """
+        if len(locations) < 2:
+            raise LocationsTooLittle("Requires three or more vertices to form "
+                                     "a polygon")
+        self.locations = locations
+
+    @property
+    def length(self):
+        """
+        Calculate total length of the polyline
+
+        :return: total length in meters
+        :rtype: float
+        """
+        total_length = 0
+        for location_a, location_b in zip(
+                self.locations[:-1], self.locations[1:]):
+            total_length += Line(location_a, location_b).length
+        return total_length
+
+    def __repr__(self):
+        return "Polyline with endpoints {}".format(self.points)
+
+    __str__ = __repr__
+
+
 class Region():
     """Region class"""
 
