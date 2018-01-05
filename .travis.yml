@@ -7,4 +7,5 @@ install:
 script:
   - python -m unittest -v
 notifications:
+  email: false
   slack: gimme-gimme-gimme:uY4HHVgymLh2iLILqZahaOPK
