@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='cxc-gis',
-    version='0.2.0',
+    version='0.2.1',
     description='Geographic information system lib',
     long_description=long_description,
     url='https://github.com/XiaochenCui/cxc-gis',
