@@ -58,5 +58,3 @@ class TestFlatGeometry(BaseTestCase):
         assert self.location_d not in region_2
         region_3 = Region([self.location_b, self.location_f, self.location_g])
         assert self.location_d not in region_3
-        assert self.location_b in region_3
-        assert self.location_f not in region_3

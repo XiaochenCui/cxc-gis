@@ -5,7 +5,7 @@ cxc-gis
     :target: https://pypi.python.org/pypi/cxc-gis
 
 .. image:: https://img.shields.io/pypi/l/cxc-gis.svg
-    :target: https://pypi.python.org/pypi/cxc-gis
+    :target: https://www.gnu.org/licenses/gpl-3.0.txt
 
 .. image:: https://img.shields.io/travis/XiaochenCui/cxc-gis.svg
     :target: https://travis-ci.org/XiaochenCui/cxc-gis
